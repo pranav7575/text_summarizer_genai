@@ -1,16 +1,12 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from prompt_template import summary_prompt
-from dotenv import load_dotenv
-import os
-
-# Load environment variables from .env file
-load_dotenv()
+from config import GOOGLE_API_KEY
 
 def main():
     # Initialize the chat model
     chat_model = ChatGoogleGenerativeAI(
         model="gemini-pro",
-        google_api_key=os.getenv("GOOGLE_API_KEY")
+        google_api_key=GOOGLE_API_KEY
     )
 
     # Example text to summarize
